@@ -1,17 +1,17 @@
 import { useState } from 'react';
-import data from "./data.json";
+//import data from "./data.json";
 import './App.css';
 import './index.css';
 import Header from './component/Header';
 import TodoList from './component/TodoList';
 
 function App() {
-  const [todoList,setTodoList]=useState(data)
-  const [count,setCount]=useState(data.length)
+  const [todoList,setTodoList]=useState([])
+  //const [count,setCount]=useState(data.length)
   return (
     <div className="App">
         <Header setTodoList={setTodoList}/>
-        <TodoList todoList={todoList} setTodoList={setTodoList} count={count} setCount={setCount}/>
+        <TodoList todoList={todoList} setTodoList={setTodoList}/>
     
     </div>
   );
