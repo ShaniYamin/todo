@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
 
-export default function TodoForm({setTodoList}) {
+export default function TodoForm({count,setCount,setTodoList}) {
   const [todo,setTodo] = useState('')
  
-    function handleOnChange(e){
+    const handleOnChange=(e)=>{
         setTodo(e.target.value)
         
   }
-  function handleOnSubmit(e){
+  const addTask=(prevState)=>{
+    let copy=[...prevState]
+    copy=[...copy,{id:count+1,task:todo,complete:false}]
+    setTodoList(copy)
+    setCount(count+1)
+  }
+  const handleOnSubmit=(e)=>{
     e.preventDefault()
-
-    setTodoList((prevState) => [todo,...prevState])
+    addTask(todo)
     setTodo('')
   }
     return (

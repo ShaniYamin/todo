@@ -42,4 +42,8 @@
     display: block;
     margin: 24px 0;
     height: 14px;
+    border-style: solid;
+}
+.completed_btn{
+    text-decoration: line-through;
 }
