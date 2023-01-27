@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import AddIcon from '@mui/icons-material/Add';
+import { v4 as uuid } from 'uuid';
 
 export default function TodoForm({setTodoList}) {
-  const [todo,setTodo] = useState('')
+  let id=uuid().slice(0,8)
+  let date=new Date() 
+  const [todo,setTodo] = useState({id:id,task:'',complete:false,remove:false,time:date})
  
     const handleOnChange=(e)=>{
         setTodo(e.target.value)
