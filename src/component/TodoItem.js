@@ -1,6 +1,6 @@
 import React from 'react'
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+//import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 export default function TodoItem({todo,todoList, setTodoList}) {
     const handleDelete = (todo) => {
@@ -12,9 +12,8 @@ export default function TodoItem({todo,todoList, setTodoList}) {
     } 
     return (
     <div>
-    {/* <button>done</button> */}
     <li className='row_todo' >
-        <label for="item" class="text" onClick={()=>handleDelete(todo)}>{todo}</label>
+        <label for="item" class="text" onClick={()=>handleDelete(todo)}>{todo.task}</label>
        <RadioButtonUncheckedIcon onClick={()=>completedTask(todo)}/>
     </li>
      {/* <button className='rm_btn' onC={handleDelete(todo)}>rm</button> */}
